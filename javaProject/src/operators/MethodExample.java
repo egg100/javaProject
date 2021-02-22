@@ -11,12 +11,12 @@ public class MethodExample {
 		System.out.println(result);
 		result = divide(30, 12);
 		System.out.println(result);
-		// ctrl + shft + F : ÄÚµå ÀÚµ¿ Á¤¸®
+		// ctrl + shft + F : ì½”ë“œ ìë™ ì •ë¦¬
 		printAge(25);
-		System.out.println("µÎ ¼öÀÇ ÇÕ: " + (10+20));
+		System.out.println("ë‘ ìˆ˜ì˜ í•©: " + (10+20));
 	}
 	public static void printAge(int age) {
-		System.out.println("³ªÀÌ´Â : " + age + "ÀÔ´Ï´Ù.");
+		System.out.println("ë‚˜ì´ëŠ” : " + age + "ì…ë‹ˆë‹¤.");
 	}
 
 	public static int sum(int a, int b) {

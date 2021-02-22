@@ -9,13 +9,13 @@ public class Variable1 {
 		
 		byte result1 = (byte) (b1 + 10);
 		int result2 = s1 + 100;
-		// ¿¬»ê½Ã byteÅ¸ÀÔ µ¥ÀÌÅÍ¿©µµ intÅ¸ÀÔÀ¸·Î ¹Ù²Ù¾î ¿¬»êÀ» ÇÏ¹Ç·Î ´õÇÑ °ªÀ» byteÅ¸ÀÔ¿¡ ÀúÀåÇÒ ¼ö ¾ø´Ù
-		//castingÇØ¼­ µ¥ÀÌÅÍÅ¸ÀÔÀ» º¯È¯ÇØÁÖ¸é byte¿¡ ´ãÀ» ¼ö ÀÖ´Ù.
+		// ì—°ì‚°ì‹œ byteíƒ€ìž… ë°ì´í„°ì—¬ë„ intíƒ€ìž…ìœ¼ë¡œ ë°”ê¾¸ì–´ ì—°ì‚°ì„ í•˜ë¯€ë¡œ ë”í•œ ê°’ì„ byteíƒ€ìž…ì— ì €ìž¥í•  ìˆ˜ ì—†ë‹¤
+		//castingí•´ì„œ ë°ì´í„°íƒ€ìž…ì„ ë³€í™˜í•´ì£¼ë©´ byteì— ë‹´ì„ ìˆ˜ ìžˆë‹¤.
 		int result3 = i1 + 10000;
 		long result4 = l1 + 25000;
-		//·ÕÇü°ú ÀÎÆ®ÇüÀ» ¿¬»êÇÒ¶§´Â Å« µ¥ÀÌÅÍÅ¸ÀÔÀ» ±âÁØÀ¸·Î °è»êÇÏ¹Ç·Î ÀÎÆ®¸¦ ·ÕÀ¸·Î ¹Ù²ã¼­ °è»ê.
+		//ë¡±í˜•ê³¼ ì¸íŠ¸í˜•ì„ ì—°ì‚°í• ë•ŒëŠ” í° ë°ì´í„°íƒ€ìž…ì„ ê¸°ì¤€ìœ¼ë¡œ ê³„ì‚°í•˜ë¯€ë¡œ ì¸íŠ¸ë¥¼ ë¡±ìœ¼ë¡œ ë°”ê¿”ì„œ ê³„ì‚°.
 		
-		System.out.println("°á°ú°ªÀº : " + result4);
+		System.out.println("ê²°ê³¼ê°’ì€ : " + result4);
 		
 	}
 }

@@ -7,11 +7,11 @@ public class MorningCode {
 		int myAge = 26;
 		
 		if (standard < myAge) {
-			System.out.println("³ªÀÌ°¡ Á» µé¾ú½À´Ï´Ù.");
+			System.out.println("ë‚˜ì´ê°€ ì¢€ ë“¤ì—ˆìŠµë‹ˆë‹¤.");
 		} else if (standard > myAge) {
-			System.out.println("ÇÑÃ¢ÀÌ³×¿ä.");
+			System.out.println("í•œì°½ì´ë„¤ìš”.");
 		} else {
-			System.out.println("ÀûÁ¤ÇÑ ³ªÀÌÀÔ´Ï´Ù.");
+			System.out.println("ì ì •í•œ ë‚˜ì´ì…ë‹ˆë‹¤.");
 		}
 	}
 

@@ -7,9 +7,9 @@ public class PromotionExample {
 		int intValue = byteValue;
 		System.out.println(intValue);
 		
-		char charValue = '°¡';
+		char charValue = 'ê°€';
 		intValue = charValue;
-		System.out.println("°¡ÀÇ À¯´ÏÄÚµå=" + intValue);
+		System.out.println("ê°€ì˜ ìœ ë‹ˆì½”ë“œ=" + intValue);
 		
 		intValue = 500;
 		long longValue = intValue;
