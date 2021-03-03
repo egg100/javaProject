@@ -9,7 +9,7 @@ public class Student {
 	int eng;
 	
 	//생성자:필드값을 초기화.
-	Student() {
+	public Student() {
 		System.out.println("생성자를 호출합니다.");
 	}
 	
@@ -24,15 +24,15 @@ public class Student {
 	}
 	
 	// 기능(메소드)
-	void study() {
+	public void study() {
 		System.out.println("공부합니다.");
 	}
 	
-	void run() {
+	public void run() {
 		System.out.println("운동을 합니다.");
 	}
 	
-	void introduce() {
+	public void introduce() {
 		System.out.println("학번: " + studentNo + ", 학년: " + grade + ", 영어: " + eng + ", 수학: " + math);
 	}
 }
