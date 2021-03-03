@@ -7,6 +7,7 @@ public class LibrarayApplication {
 		Book[] bookList = new Book[10];
 		Member user = new Member();
 		Scanner scn = new Scanner(System.in);
+		boolean registered = false;
 		
 		while(true) {
 			System.out.println("----------------------------------------------------");
@@ -34,14 +35,21 @@ public class LibrarayApplication {
 				}
 				
 			} else if(menu == 2) {
-				scn.nextLine();
-				System.out.print("ID 입력> ");
-				String id = scn.nextLine();
-				user.setId(id);
-				System.out.print("이름 입력> ");
-				String name = scn.nextLine();
-				user.setName(name);
-					
+				if(registered) {
+					System.out.println("이미 등록되어 있습니다.");
+				} else {
+					scn.nextLine();
+					System.out.print("ID 입력> ");
+					String id = scn.nextLine();
+					user.setId(id);
+					System.out.print("이름 입력> ");
+					String name = scn.nextLine();
+					user.setName(name);
+					registered = true;
+				}	
+			} else if(menu != 9 && !registered) {
+				System.out.println("회원정보를 입력해 주세요.");
+				continue;
 			} else if(menu == 3) {
 				scn.nextLine();
 				boolean finded = false;
