@@ -18,20 +18,25 @@ public class LibrarayApplication {
 			
 			if(menu == 1) {
 				scn.nextLine();
-				System.out.print("도서명> ");
-				String title = scn.nextLine();
-				System.out.print("저자명> ");
-				String author = scn.nextLine();
-				System.out.print("출판사> ");
-				String publisher = scn.nextLine();
-				System.out.print("가격> ");
-				int price = scn.nextInt();
+				boolean max = true;
 				
 				for(int i = 0; i < bookList.length; i++) {
 					if(bookList[i] == null) {
+						System.out.print("도서명> ");
+						String title = scn.nextLine();
+						System.out.print("저자명> ");
+						String author = scn.nextLine();
+						System.out.print("출판사> ");
+						String publisher = scn.nextLine();
+						System.out.print("가격> ");
+						int price = scn.nextInt();
 						bookList[i] = new Book(title, author, publisher, price);
+						max = false;
 						break;
 					}
+				}
+				if(max) {
+					System.out.println("더이상 도서를 등록할수 없습니다.");
 				}
 				
 			} else if(menu == 2) {
@@ -93,6 +98,8 @@ public class LibrarayApplication {
 			} else if(menu == 9) {
 				break;
 			}
-		}
+		} //while 루프 끝
+		scn.close();
+		System.out.println("프로그램 종료");
 	}
 }
