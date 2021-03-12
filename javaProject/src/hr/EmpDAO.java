@@ -4,6 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class EmpDAO {
 	Connection conn = null;
@@ -43,6 +48,54 @@ public class EmpDAO {
 		
 	}
 	
+	public Set<Employee> getEmps() {
+		String sql = "select * from emp_java";
+		Set<Employee> set = new HashSet<>();
+		Statement stmt = null;
+		ResultSet rs = null;
+		try {
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				Employee emp = new Employee();
+				emp.setEmployeeId(rs.getInt("employee_id"));
+				emp.setFirstName(rs.getString("first_name"));
+				emp.setLastName(rs.getString("Last_name"));
+				emp.setSalary(rs.getInt("salary"));
+				set.add(emp);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(rs, stmt, conn);
+		}
+		return set;
+	}
+	
+	public List<Employee> getEmpList() {
+		String sql = "select * from emp_java";
+		List<Employee> list = new ArrayList<>();
+		Statement stmt = null;
+		ResultSet rs = null;
+		try {
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				Employee emp = new Employee();
+				emp.setEmployeeId(rs.getInt("employee_id"));
+				emp.setFirstName(rs.getString("first_name"));
+				emp.setLastName(rs.getString("Last_name"));
+				emp.setSalary(rs.getInt("salary"));
+				list.add(emp);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(rs, stmt, conn);
+		}
+		return list;
+	}
+	
 	public Employee[] empList() {
 		PreparedStatement psmt = null;
 		ResultSet rs = null;
@@ -63,7 +116,7 @@ public class EmpDAO {
 				emp.setLastName(rs.getString("last_name"));
 				emp.setPhoneNumber(rs.getString("phone_number"));
 				emp.setSalary(rs.getInt("salary"));
-				System.out.println(emp.toString());
+//				System.out.println(emp.toString());
 				employees[i++] = emp;
 			}
 		} catch (SQLException e) {
