@@ -2,8 +2,14 @@ package lambdaExpression;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.IntPredicate;
 import java.util.function.ToIntFunction;
+import java.util.stream.Stream;
+
+import hr.EmpDAO;
+import hr.Employee;
 
 public class FunctionExample1 {
 	private static List<Student> list = Arrays.asList(
@@ -34,5 +40,14 @@ public class FunctionExample1 {
 		
 		System.out.println("[수학 점수]");
 		printInt(t -> t.getMathScore());
+		
+		EmpDAO dao = new EmpDAO();
+		List<Employee> list = dao.getEmpList();
+		Stream<Employee> stream = list.stream();
+		stream.mapToInt(value -> value.getSalary())
+			.filter(value -> value > 5000)
+			.forEach(t -> {
+					System.out.println("salary: " + t);
+			});
 	}
 }
