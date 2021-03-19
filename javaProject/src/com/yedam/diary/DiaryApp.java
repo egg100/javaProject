@@ -4,8 +4,8 @@ public class DiaryApp {
 	DAO dao;
 
 	public void start() {
-		dao = new DiaryListDAO();
-//		dao = new DiaryOracleDAO();
+//		dao = new DiaryListDAO();
+		dao = new DiaryOracleDAO();
 
 		int menuNum = 0;
 
@@ -52,6 +52,8 @@ public class DiaryApp {
 		case 수정: update(); break;
 		case 삭제: delete(); break;
 		case 전체조회: selectAll(); break;
+		case 날짜검색: selectDate(); break;
+		case 내용검색: selectContent(); break;
 		}
 	}
 	
@@ -102,8 +104,37 @@ public class DiaryApp {
 	public void selectAll() {
 		System.out.println("전체조회선택>>");
 		for(DiaryVO vo : dao.selectAll()) {
-			System.out.println(vo.getWdate());
-			System.out.println(vo.getCotents());
+			print(vo);
 		}
+	}
+	
+	//날짜로 검색
+	public void selectDate() {
+		System.out.println("날짜검색>>");
+		String wdate = StdInputUtil.readDate();
+		DiaryVO vo = dao.selectDate(wdate);
+		if(vo != null) {
+			print(vo);
+		} else {
+			System.out.println("해당 날짜의 일기가 존재하지 않습니다.");
+		}
+		
+	}
+	
+	//내용 검색
+	public void selectContent() {
+		System.out.println("내용검색>>");
+		String find = StdInputUtil.readLine();
+		if(dao.selectContent(find) != null) {
+			for(DiaryVO vo : dao.selectContent(find)) {
+				print(vo);
+			}
+		}
+	}
+	
+	public void print(DiaryVO vo) {
+		System.out.println("<날짜: " + vo.getWdate() + ">");
+		System.out.println(vo.getCotents());
+		System.out.println("--------------------------------");
 	}
 } // end of class

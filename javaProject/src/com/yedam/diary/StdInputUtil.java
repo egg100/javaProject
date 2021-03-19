@@ -33,6 +33,7 @@ public class StdInputUtil {
 		do {
 			try {
 				result = br.readLine();
+				df.setLenient(false);
 				df.parse(result.trim());
 				break;
 			} catch (Exception e) {
@@ -58,5 +59,15 @@ public class StdInputUtil {
 			e.printStackTrace();
 		}
 		return result.toString();
+	}
+	
+	//한줄 입력
+	public static String readLine() {
+		try {
+			return br.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
